@@ -1,19 +1,29 @@
 let amigos = [];
 
-function adicionarAmigo(){
-    let inputAmigo = document.getElementById ('amigo');
+function adicionarAmigo() {
+    let inputAmigo = document.getElementById('amigo');
     let nomeAmigo = inputAmigo.value;
-    console.log (nomeAmigo);
+    console.log(nomeAmigo);
 
-        if (!nomeAmigo) {
-            alert("Digite o nome do amigo");
+    if (!nomeAmigo) {
+        alert("Digite o nome do amigo");
+        return;
+    }
+
+    const caracteresPermitidos = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZÀ-ú '-áàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑ";
+
+    for (let i = 0; i < nomeAmigo.length; i++) { // Iterar sobre o nomeAmigo atual
+        if (caracteresPermitidos.indexOf(nomeAmigo[i]) === -1) {
+            alert(`O nome "${nomeAmigo}" contém caracteres inválidos. Por favor, insira um nome válido.`);
             return;
         }
-            amigos.push(nomeAmigo);
-            inputAmigo.value = "";
-            inputAmigo.focus ();
-            atualizarLista ();
     }
+
+    amigos.push(nomeAmigo);
+    inputAmigo.value = "";
+    inputAmigo.focus();
+    atualizarLista();
+}
 function atualizarLista (){
     let listaAmigos = document.getElementById ('listaAmigos');
     listaAmigos.innerHTML = "";
@@ -28,7 +38,7 @@ function sortearAmigo (){
         alert ("Adicione amigos antes de sortear");
         return;
     }
-
+     
     let amigoSorteado = amigos[Math.floor(Math.random() * amigos.length)];
     let resultado = document.getElementById ('resultado');
     resultado.innerHTML = `O amigo sorteado foi: ${amigoSorteado}`;
