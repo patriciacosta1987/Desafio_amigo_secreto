@@ -20,8 +20,9 @@ function adicionarAmigo() {
     }
 
     amigos.push(nomeAmigo);    
-    inputAmigo.focus(); 
     atualizarLista();
+    inputAmigo.value = "";
+    inputAmigo.focus();
 }
 function atualizarLista (){ 
     let listaAmigos = document.getElementById ('listaAmigos'); 
