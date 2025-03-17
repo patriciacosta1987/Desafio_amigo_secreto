@@ -5,7 +5,7 @@
 
 
 Este projeto traz uma aplicação simples, para selecionar um amigo secreto dentre as pessoas adicionadas.  
-Ele permite que o usuário insira nomes à lista, a qual valida a entrada visando evitar a inserção de caracteres inválidos ou vazios e, assim,  realizar o sorteio. Esta aplicação permite que os participantes realizem várias rodadas em busca do acerto ao amigo secreto sorteado.
+Ele permite que o usuário insira nomes à lista, a qual valida a entrada visando evitar a inserção de caracteres inválidos ou vazios e, assim,  realizar o sorteio. Esta aplicação permite que os participantes realizem várias rodadas buscando descobrir o amigo secreto sorteado.
 Quanto mais nomes na lista, mais difícil fica o desafio de descobrir o amigo secreto.
 
 ## Funcionalidades
